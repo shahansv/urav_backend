@@ -2,7 +2,6 @@ const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-
 exports.login = async (req, res) => {
   try {
     let { email, password } = req.body;
@@ -29,7 +28,9 @@ exports.login = async (req, res) => {
           res.status(403).json({ message: "Invalid password" });
         }
       } else {
-        res.status(400).json({ message: "User with this email not exists" });
+        res
+          .status(400)
+          .json({ message: " User with this email does not exist" });
       }
     } else {
       res.status(400).json({ message: "Please fill are required details" });
