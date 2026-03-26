@@ -14,6 +14,10 @@ const ideaSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    isLiked: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true },
 );

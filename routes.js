@@ -9,5 +9,6 @@ const router = new express.Router();
 router.post("/login", authController.login);
 router.post("/addIdea", userController.addIdea);
 router.get("/getIdeas", jwtAdminMiddleware, adminController.getIdeas);
+router.post("/toggleLikeIdea/:ideaId", jwtAdminMiddleware, adminController.toggleLikeIdea);
 
 module.exports = router;
